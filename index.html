@@ -11,28 +11,29 @@
 
 <body>
   <header>
-    <div style="border: 2px solid blue; display: flex; height: 300px; align-items: center;">
-      <div style="height: 250px; width: 30%; border: 1px dashed red;">
+    <div id="header-box" style="border: 2px solid blue; display: flex; height: 300px; align-items: center;">
+      <div class="home-image" style="height: 250px; width: 30%; border: 1px dashed red;">
         image of home
       </div>
       header blox
     </div>
   </header>
   <menu>
-    <nav>
+    <nav class="navbar" style="border: 2px solid green;">
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Games</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#">Trang chủ</a></li>
+        <li><a href="#">Trò chơi</a></li>
+        <li><a href="#">Giới thiệu</a></li>
+        <li><a href="#">Liên lạc</a></li>
+        <li><a href="#">Tài khoản</a></li>
       </ul>
     </nav>
   </menu>
   <main>
     <h2>Danh sach tro choi</h2>
 
-    <div>
-      <input type="text" placeholder="Tim kiem game">
+    <div class="filter-bar" style="border: 2px solid green;">
+      <input type=" text" placeholder="🔍 Tim kiem game">
       <select>
         <option value="all">Tat ca</option>
         <option value="action">Hanh dong</option>
@@ -44,13 +45,21 @@
         <option value="arcade">Arcade</option>
         <option value="multiplayer">Da nguoi choi</option>
       </select>
-      <div>game list</div>
     </div>
+    <div id="game-list" style="border: 2px solid black; display: flex;">game list</div>
+
   </main>
   <footer>
     <p>thong tin lien he</p>
   </footer>
-  <div>game-overlay(hide)</div>
+
+  <div id="game-overlay" class="overlay" style="display: none">
+    <div class="overlay-content">
+      <button id="overlay-close" class="close-btn">❌</button>
+      <div id="game-container"></div>
+    </div>
+  </div>
+
   <script type="module" src="js/main.js"></script>
 </body>
 
