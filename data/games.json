@@ -2,19 +2,55 @@
   {
     "id": "tic-tac-toe",
     "name": "Tic Tac Toe",
-    "image": "img/tic-tac-toe.png",
+    "image": "/images/tic-tac-toe.png",
     "module": "/js/tic-tac-toe.js"
   },
   {
     "id": "memory-game",
     "name": "Memory Game",
-    "image": "img/memory.png",
+    "image": "/images/memory.png",
     "module": "/js/memory-game.js"
   },
   {
     "id": "snake-game",
     "name": "Snake Game",
-    "image": "img/snake.png",
+    "image": "/images/snake.png",
+    "module": "/js/snake-game.js"
+  },
+  {
+    "id": "tic-tac-toe",
+    "name": "Tic Tac Toe",
+    "image": "/images/tic-tac-toe.png",
+    "module": "/js/tic-tac-toe.js"
+  },
+  {
+    "id": "memory-game",
+    "name": "Memory Game",
+    "image": "/images/memory.png",
+    "module": "/js/memory-game.js"
+  },
+  {
+    "id": "snake-game",
+    "name": "Snake Game",
+    "image": "/images/snake.png",
+    "module": "/js/snake-game.js"
+  },
+  {
+    "id": "tic-tac-toe",
+    "name": "Tic Tac Toe",
+    "image": "/images/tic-tac-toe.png",
+    "module": "/js/tic-tac-toe.js"
+  },
+  {
+    "id": "memory-game",
+    "name": "Memory Game",
+    "image": "/images/memory.png",
+    "module": "/js/memory-game.js"
+  },
+  {
+    "id": "snake-game",
+    "name": "Snake Game",
+    "image": "/images/snake.png",
     "module": "/js/snake-game.js"
   }
 ]
