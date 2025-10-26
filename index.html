@@ -1,5 +1,66 @@
 <!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiniGame Web</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="css/game-overlay.css">
 </head>
+
 <body>
+  <header>
+    <div id="header-box" style="border: 2px solid blue; display: flex; height: 300px; align-items: center;">
+      <div class="home-image" style="height: 250px; width: 30%; border: 1px dashed red;">
+        image of home
+      </div>
+      header blox
+    </div>
+  </header>
+  <menu>
+    <nav class="navbar" style="border: 2px solid green;">
+      <ul>
+        <li><a href="#">Trang chủ</a></li>
+        <li><a href="#">Trò chơi</a></li>
+        <li><a href="#">Giới thiệu</a></li>
+        <li><a href="#">Liên lạc</a></li>
+        <li><a href="#">Tài khoản</a></li>
+      </ul>
+    </nav>
+  </menu>
+  <main>
+    <h2>Danh sach tro choi</h2>
+
+    <div class="filter-bar" style="border: 2px solid green;">
+      <input type=" text" placeholder="🔍 Tim kiem game">
+      <select>
+        <option value="all">Tat ca</option>
+        <option value="action">Hanh dong</option>
+        <option value="puzzle">Giai do</option>
+        <option value="strategy">Chien luoc</option>
+        <option value="sports">The thao</option>
+        <option value="racing">Dua xe</option>
+        <option value="adventure">Phieu luu</option>
+        <option value="arcade">Arcade</option>
+        <option value="multiplayer">Da nguoi choi</option>
+      </select>
+    </div>
+    <div id="game-list" style="border: 2px solid black; display: flex;">game list</div>
+
+  </main>
+  <footer>
+    <p>thong tin lien he</p>
+  </footer>
+
+  <div id="game-overlay" class="overlay" style="display: none">
+    <div class="overlay-content">
+      <button id="overlay-close" class="close-btn">❌</button>
+      <div id="game-container"></div>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
 </body>
+
 </html>
