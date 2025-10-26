@@ -8,7 +8,7 @@ async function loadGames() {
     const card = document.createElement("div");
     card.className = "game-card";
     card.innerHTML = `
-    <img src="${game.image} alt="${game.name}"/>
+    <img src="${game.image}" alt="${game.name}"/>
     <h3>${game.name}</h3>`;
     card.addEventListener("click", () => {
       openGame(game);

@@ -7,55 +7,63 @@
   <title>MiniGame Web</title>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="css/game-overlay.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chonburi&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <header>
-    <div id="header-box" style="border: 2px solid blue; display: flex; height: 300px; align-items: center;">
-      <div class="home-image" style="height: 250px; width: 30%; border: 1px dashed red;">
-        image of home
+    <div id="header-box">
+      <div class="home-image">
+        <a href="index.html">
+          <img src="images/home.png" alt="Home Image">
+        </a>
       </div>
-      header blox
+      <menu>
+        <nav class="navbar">
+          <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Trò chơi</a></li>
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#">Liên lạc</a></li>
+            <li><a href="#">Tài khoản</a></li>
+          </ul>
+        </nav>
+      </menu>
     </div>
   </header>
-  <menu>
-    <nav class="navbar" style="border: 2px solid green;">
-      <ul>
-        <li><a href="#">Trang chủ</a></li>
-        <li><a href="#">Trò chơi</a></li>
-        <li><a href="#">Giới thiệu</a></li>
-        <li><a href="#">Liên lạc</a></li>
-        <li><a href="#">Tài khoản</a></li>
-      </ul>
-    </nav>
-  </menu>
   <main>
-    <h2>Danh sach tro choi</h2>
-
-    <div class="filter-bar" style="border: 2px solid green;">
-      <input type=" text" placeholder="🔍 Tim kiem game">
-      <select>
-        <option value="all">Tat ca</option>
-        <option value="action">Hanh dong</option>
-        <option value="puzzle">Giai do</option>
-        <option value="strategy">Chien luoc</option>
-        <option value="sports">The thao</option>
-        <option value="racing">Dua xe</option>
-        <option value="adventure">Phieu luu</option>
-        <option value="arcade">Arcade</option>
-        <option value="multiplayer">Da nguoi choi</option>
-      </select>
-    </div>
-    <div id="game-list" style="border: 2px solid black; display: flex;">game list</div>
-
+    <section class="content-section">
+      <div class="filter-bar">
+        <div>
+          <img src="/images/search.png" alt="Search Icon">
+          <input type=" text" placeholder="Tìm kiếm">
+        </div>
+        <select>
+          <option value="all">Tất cả</option>
+          <option value="action">Hành động</option>
+          <option value="puzzle">Giải đố</option>
+          <option value="strategy">Chiến lược</option>
+          <option value="sports">Thể thao</option>
+          <option value="racing">Đua xe</option>
+          <option value="adventure">Phiêu lưu</option>
+          <option value="arcade">Arcade</option>
+          <option value="multiplayer">Nhiều người chơi</option>
+        </select>
+      </div>
+      <div id="game-list">Đang tải danh sách trò chơi</div>
+    </section>
   </main>
   <footer>
-    <p>thong tin lien he</p>
   </footer>
 
   <div id="game-overlay" class="overlay" style="display: none">
     <div class="overlay-content">
-      <button id="overlay-close" class="close-btn">❌</button>
+      <div class="close-container">
+        <button id="overlay-close" class="close-btn">❌</button>
+      </div>
       <div id="game-container"></div>
     </div>
   </div>
