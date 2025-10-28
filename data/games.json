@@ -1,9 +1,9 @@
 [
   {
-    "id": "tic-tac-toe",
-    "name": "Tic Tac Toe",
-    "image": "/images/tic-tac-toe.png",
-    "module": "/js/tic-tac-toe.js"
+    "id": "black-jack",
+    "name": "Black Jack",
+    "image": "/images/black-jack.jpg",
+    "module": "/js/black-jack.js"
   },
   {
     "id": "memory-game",
