@@ -39,6 +39,11 @@ html {
   background-position: center -90px;
 }
 
+.home-image {
+  width: 200px;
+  height: auto;
+}
+
 .home-image img {
   width: 100%;
   height: auto;
@@ -47,6 +52,7 @@ html {
   border-radius: 30px;
 }
 
+/* trang trí cho menu........*/
 menu {
   margin: 0;
   padding: 0;
@@ -71,7 +77,6 @@ menu {
 .navbar ul li {
   flex: 0 0 auto;
   font-size: 1.5rem;
-  padding: 10px;
 }
 
 .navbar ul li:hover {
@@ -79,6 +84,7 @@ menu {
   border-radius: 15px;
   color: #ffffff;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
 }
 
 .navbar ul li:hover * {
@@ -86,12 +92,10 @@ menu {
 }
 
 .navbar ul li a {
+  color: rgb(31, 65, 137);
+  display: block;
   text-decoration: none;
-}
-
-.home-image {
-  width: 200px;
-  height: auto;
+  padding: 10px;
 }
 
 /* trang trí cho  main.........................*/
@@ -109,6 +113,7 @@ main {
   padding: 20px;
 }
 
+/* trang trí cho  filter-bar....... */
 .filter-bar {
   display: flex;
   margin: 10px;
@@ -163,7 +168,7 @@ main {
 /* trang trí cho  card container.....................*/
 #game-list {
   /* display: flex;
-  flex-wrap: wrap; */
+  flex-wrap: wrap; //ko đẹp*/
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 50px;
@@ -185,6 +190,10 @@ main {
 .game-card:hover {
   transform: scale(1.05);
   transition: all 0.3s ease-in-out;
+}
+
+html:has(.game-card:active) {
+  overflow: hidden;
 }
 
 

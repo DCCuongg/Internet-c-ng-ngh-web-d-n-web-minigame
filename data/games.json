@@ -1,56 +1,167 @@
 [
   {
+    "id": "tic-tac-toe",
+    "name": "Tic Tac Toe",
+    "image": "/images/tic-tac-toe.png",
+    "module": "/js/tic-tac-toe.js",
+    "category": [
+      "strategy",
+      "puzzle",
+      "multiplayer"
+    ]
+  },
+  {
     "id": "black-jack",
     "name": "Black Jack",
     "image": "/images/black-jack.jpg",
-    "module": "/js/black-jack.js"
+    "module": "/js/black-jack.js",
+      "category": [
+      "strategy",
+      "puzzle"
+    ]
   },
   {
     "id": "memory-game",
     "name": "Memory Game",
     "image": "/images/memory.png",
-    "module": "/js/memory-game.js"
+    "module": "/js/memory-game.js",
+    "category": [
+      "puzzle",
+      "arcade"
+    ]
   },
   {
     "id": "snake-game",
     "name": "Snake Game",
     "image": "/images/snake.png",
-    "module": "/js/snake-game.js"
+    "module": "/js/snake-game.js",
+    "category": [
+      "arcade",
+      "action"
+    ]
   },
   {
     "id": "tic-tac-toe",
     "name": "Tic Tac Toe",
     "image": "/images/tic-tac-toe.png",
-    "module": "/js/tic-tac-toe.js"
+    "module": "/js/tic-tac-toe.js",
+    "category": [
+      "strategy",
+      "puzzle",
+      "multiplayer"
+    ]
   },
   {
     "id": "memory-game",
     "name": "Memory Game",
     "image": "/images/memory.png",
-    "module": "/js/memory-game.js"
+    "module": "/js/memory-game.js",
+    "category": [
+      "puzzle",
+      "arcade"
+    ]
   },
   {
     "id": "snake-game",
     "name": "Snake Game",
     "image": "/images/snake.png",
-    "module": "/js/snake-game.js"
+    "module": "/js/snake-game.js",
+    "category": [
+      "arcade",
+      "action"
+    ]
   },
   {
     "id": "tic-tac-toe",
     "name": "Tic Tac Toe",
     "image": "/images/tic-tac-toe.png",
-    "module": "/js/tic-tac-toe.js"
+    "module": "/js/tic-tac-toe.js",
+    "category": [
+      "strategy",
+      "puzzle",
+      "multiplayer"
+    ]
   },
   {
     "id": "memory-game",
     "name": "Memory Game",
     "image": "/images/memory.png",
-    "module": "/js/memory-game.js"
+    "module": "/js/memory-game.js",
+    "category": [
+      "puzzle",
+      "arcade"
+    ]
   },
   {
     "id": "snake-game",
     "name": "Snake Game",
     "image": "/images/snake.png",
-    "module": "/js/snake-game.js"
+    "module": "/js/snake-game.js",
+    "category": [
+      "arcade",
+      "action"
+    ]
+  },
+  {
+    "id": "tic-tac-toe",
+    "name": "Tic Tac Toe",
+    "image": "/images/tic-tac-toe.png",
+    "module": "/js/tic-tac-toe.js",
+    "category": [
+      "strategy",
+      "puzzle",
+      "multiplayer"
+    ]
+  },
+  {
+    "id": "memory-game",
+    "name": "Memory Game",
+    "image": "/images/memory.png",
+    "module": "/js/memory-game.js",
+    "category": [
+      "puzzle",
+      "arcade"
+    ]
+  },
+  {
+    "id": "snake-game",
+    "name": "Snake Game",
+    "image": "/images/snake.png",
+    "module": "/js/snake-game.js",
+    "category": [
+      "arcade",
+      "action"
+    ]
+  },
+  {
+    "id": "tic-tac-toe",
+    "name": "Tic Tac Toe",
+    "image": "/images/tic-tac-toe.png",
+    "module": "/js/tic-tac-toe.js",
+    "category": [
+      "strategy",
+      "puzzle",
+      "multiplayer"
+    ]
+  },
+  {
+    "id": "memory-game",
+    "name": "Memory Game",
+    "image": "/images/memory.png",
+    "module": "/js/memory-game.js",
+    "category": [
+      "puzzle",
+      "arcade"
+    ]
+  },
+  {
+    "id": "snake-game",
+    "name": "Snake Game",
+    "image": "/images/snake.png",
+    "module": "/js/snake-game.js",
+    "category": [
+      "arcade",
+      "action"
+    ]
   }
 ]
