@@ -11,6 +11,16 @@
     ]
   },
   {
+    "id": "black-jack",
+    "name": "Black Jack",
+    "image": "/images/black-jack.jpg",
+    "module": "/js/black-jack.js",
+      "category": [
+      "strategy",
+      "puzzle"
+    ]
+  },
+  {
     "id": "memory-game",
     "name": "Memory Game",
     "image": "/images/memory.png",
