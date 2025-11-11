@@ -21,6 +21,16 @@
     ]
   },
   {
+    "id": "basic-sudoku",
+    "name": "Basic Sudoku",
+    "image": "/images/Sudoku_img/unnamed.jpg",
+    "module": "/js/Sudoku.js",
+      "category": [
+      "strategy",
+      "puzzle"
+    ]
+  },
+  {
     "id": "memory-game",
     "name": "Memory Game",
     "image": "/images/memory.png",
