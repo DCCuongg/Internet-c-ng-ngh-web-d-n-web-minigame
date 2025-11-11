@@ -1,4 +1,4 @@
-.black-jack, 
+.black-jack,
 .black-jack * {
   margin: 0;
   padding: 0;
@@ -6,17 +6,17 @@
 }
 
 .black-jack {
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100dvh;
 
   background-image: url('/images/balatro_bg.jpg');
-  background-size: cover;          
-  background-position: center;    
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  background-color: black;         
+  background-color: black;
 
   font-family: Arial, Helvetica, sans-serif;
   color: white;
@@ -27,7 +27,7 @@
   justify-content: flex-start;
   align-items: center;
 
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 
