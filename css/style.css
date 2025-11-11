@@ -115,6 +115,7 @@ main {
 
 /* trang trí cho  filter-bar....... */
 .filter-bar {
+  max-width: 700px;
   display: flex;
   margin: 10px;
   padding: 5px;
@@ -218,31 +219,32 @@ html:has(.game-card:active) {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.25);
-  display: flex;
-  justify-content: center;
   z-index: 9999;
 }
 
 /* Lỗi kích thước */
 .overlay-content {
-  display: flex;
-  flex-direction: column;
-  position: relative;
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
   background-color: #ffffff;
-  padding: 0 20px 20px 20px;
   border-radius: 10px;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.7);
+  overflow-x: auto;
 }
 
 #game-container {
-  flex: 0 1 auto;
   overflow-y: auto;
 }
 
 .close-container {
   position: relative;
   width: 100%;
-  height: 50px;
+  height: 42.4px;
   text-align: right;
 }
 
