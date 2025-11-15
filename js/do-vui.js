@@ -3,24 +3,24 @@ function loadGame() {
     let score = 0;
     const total = 12;
     const answers = {
-    1: "B", 2: "C", 3: "A", 4: "D",
-    5: "A", 6: "C", 7: "B", 8: "D",
-    9: "A", 10: "C", 11: "B", 12: "D"
+        1: "B", 2: "C", 3: "A", 4: "D",
+        5: "A", 6: "C", 7: "B", 8: "D",
+        9: "A", 10: "C", 11: "B", 12: "D"
     };
 
     // ÂM THANH 
     const clickSound = document.getElementById("clickSound");
 
     document.addEventListener("click", (e) => {
-    // Kiểm tra phần tử có thuộc tính onclick hoặc sự kiện click được gán động
-    const target = e.target;
+        // Kiểm tra phần tử có thuộc tính onclick hoặc sự kiện click được gán động
+        const target = e.target;
 
-    // Nếu phần tử có onclick
-    if (target.getAttribute("onclick")) {
+        // Nếu phần tử có onclick
+        if (target.getAttribute("onclick")) {
             if (clickSound) {
                 clickSound.pause();
                 clickSound.currentTime = 0;
-                clickSound.volume = 0.3;      
+                clickSound.volume = 0.3;
                 clickSound.playbackRate = 1.3;
                 clickSound.play();
             }
@@ -58,26 +58,26 @@ function loadGame() {
         const navItem = document.querySelector(`nav ul li:nth-child(${qNum})`);
         const correctSound = document.getElementById("correctSound");
         const wrongSound = document.getElementById("wrongSound");
-    if (chosen === correct) {
-        el.classList.add("correct");
-        score++;
-        correctSound.currentTime = 0; // tua về đầu (nếu phát lại liên tục)
-        correctSound.play(); 
-        if (navItem) {
-            navItem.classList.remove("nav-wrong");
-            navItem.classList.add("nav-correct");
+        if (chosen === correct) {
+            el.classList.add("correct");
+            score++;
+            correctSound.currentTime = 0; // tua về đầu (nếu phát lại liên tục)
+            correctSound.play();
+            if (navItem) {
+                navItem.classList.remove("nav-wrong");
+                navItem.classList.add("nav-correct");
+            }
+        } else {
+            el.classList.add("wrong");
+            wrongSound.currentTime = 0;
+            wrongSound.play();
+            if (navItem) {
+                navItem.classList.remove("nav-correct");
+                navItem.classList.add("nav-wrong");
+            }
         }
-    } else {
-        el.classList.add("wrong");
-        wrongSound.currentTime = 0;
-        wrongSound.play();
-        if (navItem) {
-            navItem.classList.remove("nav-correct");
-            navItem.classList.add("nav-wrong");
-        }
-    }
 
-    document.getElementById("score").textContent = `Điểm: ${score}`;
+        document.getElementById("score").textContent = `Điểm: ${score}`;
     }
 
     // ======== MÀN HÌNH KẾT THÚC ========
@@ -114,13 +114,13 @@ function loadGame() {
 }
 
 export async function initGame(container) {
-  const style = document.createElement('style');
-  const res = await fetch("/css/dovui.css");
-  const cssText = await res.text();
-  style.textContent = cssText;
-  document.body.appendChild(style);
+    const style = document.createElement('style');
+    const res = await fetch("/css/dovui.css");
+    const cssText = await res.text();
+    style.textContent = cssText;
+    document.body.appendChild(style);
     container.innerHTML = `
-    <div class="do-vui">
+        <div class="do-vui">
             <nav>
                 <h2>Danh sách câu</h2>
                 <ul>
@@ -334,5 +334,5 @@ export async function initGame(container) {
             <audio id="finishSound" src="sound/do-vui/finish.mp3"></audio>
             <script src="js/do-vui.js"></script>
         </div>`;
-        loadGame();
+    loadGame();
 }
