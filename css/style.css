@@ -254,3 +254,25 @@ html:has(.game-card:active) {
   font-size: 2rem;
   cursor: pointer;
 }
+
+/* achievements................ */
+.achievement-card {
+  min-height: 340px;
+  margin: 40px 40px;
+}
+
+.achievement-card p {
+  font-size: 1.5rem;
+  text-align: justify;
+}
+
+.achievement-card>h3 {
+  line-height: 3rem;
+  font-size: 2rem;
+}
+
+.game-achievement-img {
+  width: 300px;
+  float: left;
+  margin: 0 2rem 0.1rem 0;
+}

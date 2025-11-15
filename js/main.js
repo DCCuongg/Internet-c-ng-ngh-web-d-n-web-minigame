@@ -1,3 +1,9 @@
+let account = {};
+(async () => {
+  const res = await fetch("/data/account.json");
+  account = await res.json();
+})()
+
 async function loadGames(name = "", category = "") {
   /** Là hàm xử lý dữ liệu giả lập (tải từ server đã xử lý từ BE) 
   Danh sách game sẽ được tải từ file .json và lọc theo tên và thể loại*/
@@ -30,10 +36,17 @@ async function openGame(game) {
   container.innerHTML = "";
   overlay.style.display = "flex";
   const module = await import(game.module);
-  if (typeof module.initGame === "function") {
+  if (typeof module.initGame === "function" && game.id !== "account") {
+    (account.achievements[game.id] ||= {})["newbie"] = 1;// Ghi nhận thành tựu đã chơi game
+    console.log(account);
     module.initGame(container);
+  } else if (typeof module.initGame === "function") {
+    module.initGame(container, account);
+    console.log(account);
   }
 }
+
+
 document.getElementById("overlay-close").addEventListener("click", () => {
   document.getElementById("game-overlay").style.display = "none";
   document.documentElement.style.overflow = "";//Tảt lại css của cssom, vì đã xóa css của style(inline)
@@ -50,5 +63,11 @@ document.querySelector(".filter-bar select").addEventListener("change", (e) => {
   const category = e.target.value;
   const name = document.querySelector(".filter-bar input").value;
   loadGames(name, category);
+})
+document.getElementById("account-button").addEventListener("click", () => {
+  openGame({
+    id: "account",
+    module: "/js/account.js"
+  });
 })
 loadGames();
