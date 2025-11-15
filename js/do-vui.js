@@ -1,12 +1,11 @@
+var score = 0;
+const total = 12;
+const answers = {
+    1: "B", 2: "C", 3: "A", 4: "D",
+    5: "A", 6: "C", 7: "B", 8: "D",
+    9: "A", 10: "C", 11: "B", 12: "D"
+};
 function loadGame() {
-
-    let score = 0;
-    const total = 12;
-    const answers = {
-        1: "B", 2: "C", 3: "A", 4: "D",
-        5: "A", 6: "C", 7: "B", 8: "D",
-        9: "A", 10: "C", 11: "B", 12: "D"
-    };
 
     // ÂM THANH 
     const clickSound = document.getElementById("clickSound");
@@ -29,7 +28,7 @@ function loadGame() {
 
 
     // hiển thị câu hỏi
-    function showQuestion(num) {
+    globalThis.showQuestion = function (num) {
         document.querySelectorAll(".question").forEach(q => q.classList.remove("active"));
         document.getElementById(num).classList.add("active");
 
@@ -40,16 +39,16 @@ function loadGame() {
     }
 
     // Nút tiếp/ lùi
-    function next(current) {
+    globalThis.next = function (current) {
         current < total ? showQuestion(current + 1) : showFinish();
     }
 
-    function prev(current) {
+    globalThis.prev = function (current) {
         if (current > 1) showQuestion(current - 1);
     }
 
     // Chấm điểm + đánh dấu thanh bên
-    function checkAnswer(qNum, chosen, el) {
+    globalThis.checkAnswer = function (qNum, chosen, el) {
         const correct = answers[qNum];
         const parentUL = el.parentElement;
         if (parentUL.classList.contains("answered")) return; // đã chọn rồi
@@ -81,7 +80,7 @@ function loadGame() {
     }
 
     // ======== MÀN HÌNH KẾT THÚC ========
-    function showFinish() {
+    globalThis.showFinish = function () {
         document.querySelectorAll(".question").forEach(q => q.classList.remove("active"));
         const finish = document.getElementById("finish");
         finish.classList.add("active");
@@ -94,7 +93,7 @@ function loadGame() {
     }
 
     // Chơi lại
-    function restartGame() {
+    globalThis.restartGame = function () {
         // Reset điểm
         score = 0;
         document.getElementById("score").textContent = `Điểm: ${score}`;
@@ -115,7 +114,7 @@ function loadGame() {
 
 export async function initGame(container) {
     const style = document.createElement('style');
-    const res = await fetch("/css/dovui.css");
+    const res = await fetch("/css/do-vui.css");
     const cssText = await res.text();
     style.textContent = cssText;
     document.body.appendChild(style);
@@ -143,9 +142,9 @@ export async function initGame(container) {
                 <header>
                     <div id="score">Điểm: 0</div>
                     <div class="content">
-                        <img src="images/dovui/logo.png" alt="logo game" class="header-image">
+                        <img src="images/do_vui/logo.png" alt="logo game" class="header-image">
                         <h1>Đố Vui Dân Gian</h1>
-                        <img src="images/dovui/logo.png" alt="logo game" class="header-image">
+                        <img src="images/do_vui/logo.png" alt="logo game" class="header-image">
                     </div>
                     <div class="endGame" onclick="showFinish()">Kết thúc</div>
                 </header>

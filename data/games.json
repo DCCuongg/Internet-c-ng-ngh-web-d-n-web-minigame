@@ -21,6 +21,26 @@
     }
   },
   {
+    "id": "do-vui",
+    "name": "Đố Vui",
+    "image": "/images/do_vui/logo.png",
+    "module": "/js/do-vui.js",
+    "category": [
+      "strategy",
+      "puzzle"
+    ],
+    "achievements": {
+      "starter": {
+        "title": "Người mới",
+        "description": "Hoàn thành câu hỏi đầu tiên trong Đố Vui! Đây là bước khởi đầu cho hành trình trí tuệ của bạn."
+      },
+      "genius": {
+        "title": "Thiên tài",
+        "description": "Trả lời đúng tất cả câu hỏi và chứng tỏ trí thông minh vượt trội! Không còn câu hỏi nào có thể làm khó bạn."
+      }
+    }
+  },
+  {
     "id": "black-jack",
     "name": "Black Jack",
     "image": "/images/black-jack.jpg",
