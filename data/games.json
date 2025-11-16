@@ -21,6 +21,31 @@
     }
   },
   {
+    "id": "treasure-hunting",
+    "name": "Treasure Hunting",
+    "image": "/images/treasure-hunting/treasure-hunting.png",
+    "module": "/js/treasure-hunting.js",
+    "category": [
+      "puzzle",
+      "adventure",
+      "strategy"
+    ],
+    "achievements": {
+      "first-treasure": {
+        "title": "Kho báu đầu tiên",
+        "description": "Tìm thấy kho báu đầu tiên! Một khởi đầu tuyệt vời cho hành trình khám phá của bạn."
+      },
+      "master-treasure": {
+        "title": "Thợ săn kho báu",
+        "description": "Hoàn thành tất cả các bản đồ kho báu và trở thành bậc thầy trong việc tìm kiếm kho báu!"
+      },
+      "speed-run": {
+        "title": "Nhanh như chớp",
+        "description": "Hoàn thành một bản đồ kho báu trong thời gian cực ngắn. Tốc độ và sự khéo léo là chìa khóa!"
+      }
+    }
+  },
+  {
     "id": "do-vui",
     "name": "Đố Vui",
     "image": "/images/do_vui/logo.png",
