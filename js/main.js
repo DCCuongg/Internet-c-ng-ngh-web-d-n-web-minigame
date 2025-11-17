@@ -1,9 +1,21 @@
+
 let account = {};
+let acc = {};
+function achievementUnlocked(gameId, achievementId) {
+  /**
+   * Cập nhật một achievement cho tài khoản và lưu vào localStorage.
+  */
+  (account.achievements[gameId] ||= {})[achievementId] = 1;
+  acc = JSON.parse(localStorage.getItem("account")) || {};
+  acc.achievements ||= {};
+  account.achievements = { ...acc.achievements, ...account.achievements };
+  localStorage.setItem("account", JSON.stringify(account));
+}
 (async () => {
   const res = await fetch("/data/account.json");
   account = await res.json();
+  achievementUnlocked("game-id", "achievement");
 })()
-
 async function loadGames(name = "", category = "") {
   /** Là hàm xử lý dữ liệu giả lập (tải từ server đã xử lý từ BE) 
   Danh sách game sẽ được tải từ file .json và lọc theo tên và thể loại*/
@@ -26,6 +38,7 @@ async function loadGames(name = "", category = "") {
     }
   });
 }
+
 async function openGame(game) {
   /** Hàm định nghĩa cho phần code khi có sự kiện mở game
    * sử dụng thông tin của games.json để load module tương ứng
@@ -37,7 +50,7 @@ async function openGame(game) {
   overlay.style.display = "flex";
   const module = await import(game.module);
   if (typeof module.initGame === "function" && game.id !== "account") {
-    (account.achievements[game.id] ||= {})["newbie"] = 1;// Ghi nhận thành tựu đã chơi game
+    achievementUnlocked(game.id, "newbie");// Ghi nhận thành tựu đã chơi game
     console.log(account);
     module.initGame(container);
   } else if (typeof module.initGame === "function") {
