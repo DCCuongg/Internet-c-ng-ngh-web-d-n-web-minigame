@@ -150,6 +150,30 @@ function loadGame() {
     blackjack.shuffleDeck();
     blackjack.startGame();
 
+    blackjack.restart = function () {
+        // Reset DOM
+        document.getElementById("dealer-cards").innerHTML =
+            `<img id="hidden-black-jack" src="/images/cards/BACK.png">`;
+        document.getElementById("your-cards").innerHTML = "";
+        document.getElementById("dealer-sum").innerText = "";
+        document.getElementById("your-sum-black-jack").innerText = "";
+        document.getElementById("results-black-jack").innerText = "";
+
+        // Reset internal state
+        blackjack.dealerSum = 0;
+        blackjack.yourSum = 0;
+        blackjack.dealerAceCount = 0;
+        blackjack.yourAceCount = 0;
+        blackjack.hidden = null;
+        blackjack.deck = [];
+        blackjack.canHit = true;
+
+        // Rebuild game
+        blackjack.buildDeck();
+        blackjack.shuffleDeck();
+        blackjack.startGame();
+    }
+
 }
 export async function initGame(container) {
     const style = document.createElement('style');
@@ -172,8 +196,13 @@ export async function initGame(container) {
         <button id="hit-black-jack">Hit</button>
         <button id="stay-black-jack">Stay</button>
         <p id="results-black-jack"></p>
+        <button id="restart-black-jack">Restart</button>
     </div>
     `;
-    const blackjack = document.querySelector(".black-jack");
+    const blackjackE1 = document.querySelector(".black-jack");
     loadGame();
+    
+    document.getElementById("hit-black-jack").onclick = blackjack.hit;
+    document.getElementById("stay-black-jack").onclick = blackjack.stay;
+    document.getElementById("restart-black-jack").onclick = blackjack.restart;
 }
