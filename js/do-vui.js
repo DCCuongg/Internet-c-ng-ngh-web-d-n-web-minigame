@@ -155,7 +155,7 @@ export async function initGame(container) {
                     <ul class="answers">
                         <li onclick="checkAnswer(1, 'A', this)"><strong>A.</strong> Con ngan</li>
                         <li onclick="checkAnswer(1, 'B', this)"><strong>B.</strong> Con gà</li>
-                        <li onclick="checkAnswer(1, 'C', this)"><strong>C.</strong> Con ngan</li>
+                        <li onclick="checkAnswer(1, 'C', this)"><strong>C.</strong> Con vịt</li>
                         <li onclick="checkAnswer(1, 'D', this)"><strong>D.</strong> Con ngỗng</li>
                     </ul>
                     <div class="nav-buttons">
