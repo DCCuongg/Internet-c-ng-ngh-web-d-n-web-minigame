@@ -5,7 +5,9 @@ function achievementUnlocked(gameId, achievementId) {
   /**
    * Cập nhật một achievement cho tài khoản và lưu vào localStorage.
   */
+  account.achievements ||= {};
   (account.achievements[gameId] ||= {})[achievementId] = 1;
+  console.log("Achievement unlocked:", account);
   acc = JSON.parse(localStorage.getItem("account")) || {};
   acc.achievements ||= {};
   account.achievements = { ...acc.achievements, ...account.achievements };
