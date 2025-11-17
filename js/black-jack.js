@@ -67,9 +67,6 @@ function loadGame() {
         }
         console.log(blackjack.yourSum);
 
-        document.getElementById("hit-black-jack").addEventListener("click", blackjack.hit);
-        document.getElementById("stay-black-jack").addEventListener("click", blackjack.stay);
-
     }
 
     blackjack.hit = function () {
