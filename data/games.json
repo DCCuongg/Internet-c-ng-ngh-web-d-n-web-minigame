@@ -31,7 +31,7 @@
       "strategy"
     ],
     "achievements": {
-      "first-treasure": {
+      "newbie": {
         "title": "Kho báu đầu tiên",
         "description": "Tìm thấy kho báu đầu tiên! Một khởi đầu tuyệt vời cho hành trình khám phá của bạn."
       },
@@ -55,7 +55,7 @@
       "puzzle"
     ],
     "achievements": {
-      "starter": {
+      "newbie": {
         "title": "Người mới",
         "description": "Hoàn thành câu hỏi đầu tiên trong Đố Vui! Đây là bước khởi đầu cho hành trình trí tuệ của bạn."
       },
