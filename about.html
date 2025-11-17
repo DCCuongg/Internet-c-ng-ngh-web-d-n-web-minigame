@@ -7,17 +7,16 @@
   <title>About</title>
   <link rel="stylesheet" href="/css/style.css">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chonburi&display=swap" rel="stylesheet">
   <!-- INTERNAL CSS -->
   <style>
-    main {
-      display: flex;
-      justify-content: center;
-    }
-
     .content-section {
       max-width: 1500px;
       margin: 0 auto;
       font-size: 1.5rem;
+      font-family: system-ui;
     }
 
     .content-section>* {
@@ -58,22 +57,23 @@
 </head>
 
 <body>
-  <header id="header-box">
-    <div class="home-image">
-      <a href="index.html">
-        <img src="images/home.png" alt="Home Image">
-      </a>
+  <header>
+    <div id="header-box">
+      <div class="home-image">
+        <a href="index.html">
+          <img src="images/home.png" alt="Home Image">
+        </a>
+      </div>
+      <menu>
+        <nav class="navbar">
+          <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="about.html">Giới thiệu</a></li>
+            <li><a href="contact.html">Liên lạc</a></li>
+          </ul>
+        </nav>
+      </menu>
     </div>
-    <!-- MENU -->
-    <menu>
-      <nav class="navbar">
-        <ul>
-          <li><a href="/index.html">Trang chủ</a></li>
-          <li><a href="/about.html">Giới thiệu</a></li>
-          <li><a href="/contact.html">Liên lạc</a></li>
-        </ul>
-      </nav>
-    </menu>
   </header>
 
   <!-- MAIN CONTENT -->
