@@ -4,7 +4,7 @@
     background: #ecc99a;
     margin: 0;
     box-sizing: border-box;
-    height:100vh;
+    height: calc(100vh - 43px);
 }
 
 /* Thanh bên nav */
