@@ -54,7 +54,7 @@ function loadGame() {
         if (parentUL.classList.contains("answered")) return; // đã chọn rồi
         parentUL.classList.add("answered");
 
-        const navItem = document.querySelector(`nav ul li:nth-child(${qNum})`);
+        const navItem = document.querySelector(`.do-vui nav ul li:nth-child(${qNum})`);
         const correctSound = document.getElementById("correctSound");
         const wrongSound = document.getElementById("wrongSound");
         if (chosen === correct) {
