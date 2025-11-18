@@ -1,10 +1,11 @@
 /* Font chung cho toàn trang*/
-.do-vui {
+.do-vui main {
     font-family: "Segoe UI", sans-serif;
     background: #ecc99a;
     margin: 0;
     display: flex;
     box-sizing: border-box;
+    height:100vh;
 }
 
 /* Thanh bên nav */
