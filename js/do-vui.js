@@ -34,7 +34,7 @@ function loadGame() {
 
         // Xóa trạng thái nav cũ và đánh dấu câu hiện tại
         document.querySelectorAll("nav ul li").forEach(li => li.classList.remove("nav-active"));
-        const currentNav = document.querySelector(`nav ul li:nth-child(${num})`);
+        const currentNav = document.querySelector(`.do-vui nav ul li:nth-child(${num})`);
         if (currentNav) currentNav.classList.add("nav-active");
     }
 
