@@ -1,3 +1,5 @@
+let timerInterval = null;
+
 function loadGame() {
   const boardContainer = document.getElementById("sudoku-board");
   const fillSound = document.getElementById("sudoku-fill-sound");
@@ -7,6 +9,8 @@ function loadGame() {
   let currentBoard = [];
   let solutionBoard = [];
   let currentPuzzle = [];
+  let mistakes = 0;
+  let secondsElapsed = 0;
 
   // Mảng dễ
   const easyPuzzle = [
@@ -133,6 +137,28 @@ function loadGame() {
     [8, 2, 5, 6, 1, 7, 4, 3, 9]
   ];
 
+  // Đếm thời gian
+  function startTimer() {
+    if (timerInterval) {
+      clearInterval(timerInterval);
+    }
+    secondsElapsed = 0;
+    timerInterval = setInterval(() => {
+      secondsElapsed++;
+      const h = String(Math.floor(secondsElapsed / 3600)).padStart(2, "0");
+      const m = String(Math.floor((secondsElapsed % 3600) / 60)).padStart(2, "0");
+      const s = String(secondsElapsed % 60).padStart(2, "0");
+      document.getElementById("sudoku-timer").textContent = `⏱️ ${h}:${m}:${s}`;
+    }, 1000);
+  }
+
+  function formatTime(seconds) {
+    const h = String(Math.floor(secondsElapsed / 3600)).padStart(2, "0");
+    const m = String(Math.floor((secondsElapsed % 3600) / 60)).padStart(2, "0");
+    const s = String(secondsElapsed % 60).padStart(2, "0");
+    return `${h}:${m}:${s}`;
+  }
+
   // Load board
   function loadBoard(puzzle) {
     boardContainer.innerHTML = "";
@@ -154,7 +180,49 @@ function loadGame() {
           input.addEventListener("input", (e) => {
             let val = e.target.value.replace(/[^1-9]/, "");
             e.target.value = val;
-            currentBoard[r][c] = parseInt(val) || 0;
+            const num = parseInt(val) || 0;
+            currentBoard[r][c] = num;
+            if (num === 0) {
+              e.target.style.color = "";
+              return;
+            }
+            if (num === solutionBoard[r][c]) {
+              e.target.style.color = "#00f";
+              currentBoard[r][c] = num;
+              let won = true;
+              for (let r2 = 0; r2 < 9; r2++) {
+                for (let c2 = 0; c2 < 9; c2++) {
+                  if (currentBoard[r2][c2] !== solutionBoard[r2][c2]) {
+                    won = false;
+                    break;
+                  }
+                }
+                if (!won) {
+                  break;
+                }
+              }
+              if (won) {
+                successSound.currentTime = 0;
+                successSound.play();
+                clearInterval(timerInterval);
+                const finishTime = formatTime(secondsElapsed);
+                alert(`🎉 Chính xác rồi! Chúc mừng bạn đã hoàn thành Sudoku với thời gian ${finishTime}!`);
+                const allInputs = document.querySelectorAll(".user-input");
+                allInputs.forEach(i => i.disabled = true);
+              }
+            } else {
+              e.target.style.color = "#ff3333";
+              mistakes++;
+              document.getElementById("sudoku-mistake-counter").textContent = `☠️ ${mistakes}/5`;
+              if (mistakes >= 5) {
+                failSound.currentTime = 0;
+                failSound.play();
+                alert("😭 Thật tiếc quá! Bạn đã thua do sai 5 lần! Hãy thử lại nhé!");
+                const allInputs = document.querySelectorAll(".user-input");
+                allInputs.forEach(i => i.disabled = true);
+                clearInterval(timerInterval);
+              }
+            }
             fillSound.currentTime = 0;
             fillSound.play();
             updateRemainingCounts();
@@ -189,28 +257,14 @@ function loadGame() {
       }
     }
   }
-
-  // Kiểm tra kết quả
-  document.getElementById("sudoku-check-btn").addEventListener("click", () => {
-    for (let r = 0; r < 9; r++) {
-      for (let c = 0; c < 9; c++) {
-        if (currentBoard[r][c] !== solutionBoard[r][c]) {
-          failSound.currentTime = 0;
-          failSound.play();
-          alert("Thật tiếc quá! Hãy thử lại nhé!");
-          return;
-        }
-      }
-    }
-    successSound.currentTime = 0;
-    successSound.play();
-    alert("Chính xác rồi! Xin chúc mừng bạn!");
-  });
-
+  
   // Làm lại từ đầu
   document.getElementById("sudoku-reset-btn").addEventListener("click", () => {
     loadBoard(solutionBoard.map(row => row.map(() => 0)));
     loadBoard(currentPuzzle);
+    mistakes = 0;
+    document.getElementById("sudoku-mistake-counter").textContent = `☠️ 0/5`;
+    startTimer();
   });
 
   // Chọn độ khó
@@ -218,36 +272,54 @@ function loadGame() {
     currentPuzzle = easyPuzzle;
     solutionBoard = easySolution;
     loadBoard(currentPuzzle);
+    mistakes = 0;
+    document.getElementById("sudoku-mistake-counter").textContent = `☠️ 0/5`;
+    startTimer();
   });
 
   document.getElementById("sudoku-medium-btn").addEventListener("click", () => {
     currentPuzzle = mediumPuzzle;
     solutionBoard = mediumSolution;
     loadBoard(currentPuzzle);
+    mistakes = 0;
+    document.getElementById("sudoku-mistake-counter").textContent = `☠️ 0/5`;
+    startTimer();
   });
 
   document.getElementById("sudoku-hard-btn").addEventListener("click", () => {
     currentPuzzle = hardPuzzle;
     solutionBoard = hardSolution;
     loadBoard(currentPuzzle);
+    mistakes = 0;
+    document.getElementById("sudoku-mistake-counter").textContent = `☠️ 0/5`;
+    startTimer();
   });
 
   document.getElementById("sudoku-expert-btn").addEventListener("click", () => {
     currentPuzzle = expertPuzzle;
     solutionBoard = expertSolution;
     loadBoard(currentPuzzle);
+    mistakes = 0;
+    document.getElementById("sudoku-mistake-counter").textContent = `☠️ 0/5`;
+    startTimer();
   });
 
   document.getElementById("sudoku-extreme-btn").addEventListener("click", () => {
     currentPuzzle = extremePuzzle;
     solutionBoard = extremeSolution;
     loadBoard(currentPuzzle);
+    mistakes = 0;
+    document.getElementById("sudoku-mistake-counter").textContent = `☠️ 0/5`;
+    startTimer();
   });
 
   // Khởi tạo
   currentPuzzle = easyPuzzle;
   solutionBoard = easySolution;
   loadBoard(easyPuzzle);
+  startTimer();
+  mistakes = 0;
+  document.getElementById("sudoku-mistake-counter").textContent = `☠️ 0/5 `;
 }
 
 export async function initGame(container) {
@@ -278,7 +350,11 @@ export async function initGame(container) {
                 <button id="sudoku-expert-btn"> Chuyên gia</button>
                 <button id="sudoku-extreme-btn"> Cực kỳ </button>
             </div>
-            <div id="sudoku-board">
+            <div class="sudoku-stats">
+                <div id="sudoku-mistake-counter"> ☠️ 0/5 </div>
+                <div id="sudoku-timer"> ⏱️ 00:00:00 </div>
+            </div>
+            <div id="sudoku-board"> 
                 <table>
                     <tbody id="board"> </tbody>
                 </table>
@@ -295,20 +371,23 @@ export async function initGame(container) {
                 <button class="number-button" data-number="9"> 9 <small id="remain-9"> 9 </small> </button>
             </div>
             <div class="action-buttons">
-                <button id="sudoku-check-btn"> Kiểm tra </button>
-                <button id="sudoku-reset-btn"> Làm lại </button>
+            <button id="sudoku-reset-btn"> Làm lại </button>
             </div>
         </main>
 
         <!-- Phần footer (chứa quy tắc chơi và lưu ý) -->
         <footer>
             <p>
-                <strong> Quy tắc chơi: </strong>
-                Điền các số từ 1 đến 9 vào các ô còn trống trong bảng, sao cho trên mỗi hàng, mỗi cột và
-                mỗi khối 3x3
-                không có bất kỳ một số nào được lặp lại (tức chỉ xuất hiện 1 lần).
-                <em> Lưu ý: </em>
-                Trong mỗi ô chỉ được nhập vào một chữ số duy nhất.
+                <strong> Về trò chơi này: </strong>
+                <ul>
+                    <li> Người chơi chọn cấp độ mình muốn (mặc định khi truy cập là cấp độ dễ). </li>
+                    <li> Sau khi chọn cấp độ, người chơi quan sát bảng sudoku và suy nghĩ. Sau đó chọn 1 ô trống và nhập vào từ bàn phím 1 số bất kỳ từ '1' đến '9', sao cho trên mỗi cột, mỗi hàng và mỗi khối 3x3 không có bất kỳ 1 số nào bị lặp lại. </li>
+                    <li> Người chơi có thể biết được số lượng các số chưa được điền (tương ứng cho các số từ '1' đến '9') ở ngay bê dưới bảng Sudoku. </li>
+                    <li> Nếu người chơi nhập đúng thì số sẽ hiện màu xanh. </li>
+                    <li> Nếu người chơi nhập sai thì số sẽ hiện màu đỏ. Người chơi chỉ cần nhấn 'backspace' để xóa số đó và điền lại. </li>
+                    <li> Nếu người chơi điền sai 5 lần thì sẽ thua trò chơi này và bắt buộc ấn "Làm lại" để làm lại từ đầu. </li>
+                    <li> Người chơi sẽ dành chiến thắng khi đã điền hết số ô còn trống và số lỗi nhỏ hơn 5. </li>
+                </ul>
             </p>
         </footer>
 
