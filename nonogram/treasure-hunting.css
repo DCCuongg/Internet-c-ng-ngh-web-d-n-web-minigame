@@ -4,87 +4,199 @@ body {
     color: white;
     text-align: center;
     margin: 0;
-    padding: 40px;
+    padding: 10px 20px 20px 20px; 
 }
 
 h1 {
     text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
     color: #ffcc00;
-    font-size: 3em;
+    font-size: 2em; 
+    margin-bottom: 10px;
 }
 
 /* Biến CSS */
 :root {
-    --cell-size: 100px; 
-    --gap-size: 6px;    
-    --grid-border: 8px; 
-    --grid-padding: 16px; 
+    --cell-size: 50px;   
+    --gap-size: 4px;
+    --grid-padding: 10px;
 }
 
-/* --- Container chính: Đặt bảng và chú giải ngang nhau --- */
+/* --- Container chính --- */
 #main-content-wrapper {
     display: flex; 
-    justify-content: center; 
     align-items: flex-start; 
-    gap: 40px; 
-    margin-top: 20px;
+    gap: 25px; 
+    margin: 0 auto;
+    width: fit-content; 
 }
 
 /* --- Timer --- */
 #timer-display {
-    font-size: 2.5em;
+    font-size: 1.8em;
     font-weight: bold;
     color: #ffd700;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin: 0 auto 20px auto; 
-    padding: 10px 20px;
+    margin: 0 auto 15px auto; 
+    padding: 8px 16px;
     background-color: rgba(0, 51, 102, 0.7);
-    border-radius: 10px;
+    border-radius: 8px;
     display: block; 
     width: fit-content;
-    border: 3px solid #0066cc;
+    border: 2px solid #0066cc;
 }
 
-/* --- Bảng Game (Game Container) --- */
+/* --- Bảng Game - LOẠI BỎ ĐƯỜNG VIỀN NGOÀI --- */
 #game-container {
     display: grid; 
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr;
+    grid-template-areas: 
+        "clues col-clues"
+        "row-clues grid";
+    background-color: transparent; /* LOẠI BỎ MÀU NỀN */
+    border-radius: 0; /* LOẠI BỎ BORDER-RADIUS */
+    padding: 0; /* LOẠI BỎ PADDING */
+    border: none; /* ĐẢM BẢO KHÔNG CÓ BORDER */
 }
 
-/* --- Chú giải (Legend) --- */
+/* Định nghĩa các vùng grid */
+#clues {
+    grid-area: clues;
+    background-color: transparent; /* LOẠI BỎ MÀU NỀN */
+    min-width: 80px;
+    min-height: 80px;
+}
+
+#row-clues {
+    grid-area: row-clues;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-right: none; /* LOẠI BỎ ĐƯỜNG VIỀN BÊN PHẢI */
+    background-color: transparent; /* LOẠI BỎ MÀU NỀN */
+    padding: var(--grid-padding) 8px;
+}
+
+#row-clues div {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: var(--cell-size); 
+    font-weight: bold;
+    color: #ffd700;
+    font-size: 0.85em; 
+    padding: 0 8px;
+    margin-bottom: var(--gap-size);
+    line-height: 1; 
+}
+
+#row-clues div:last-child {
+    margin-bottom: 0;
+}
+
+#col-clues {
+    grid-area: col-clues;
+    display: grid;
+    grid-template-columns: repeat(6, var(--cell-size)); 
+    gap: var(--gap-size); 
+    align-items: flex-end;
+    border-bottom: none; /* LOẠI BỎ ĐƯỜNG VIỀN DƯỚI */
+    background-color: transparent; /* LOẠI BỎ MÀU NỀN */
+    padding: 8px var(--grid-padding);
+    border-radius: 0; /* LOẠI BỎ BORDER-RADIUS */
+}
+
+#col-clues div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    font-weight: bold;
+    color: #ffd700;
+    font-size: 0.85em; 
+    line-height: 1; 
+    min-height: var(--cell-size); 
+}
+
+/* --- Lưới trò chơi - GIỮ LẠI ĐƯỜNG VIỀN --- */
+#grid {
+    grid-area: grid;
+    display: grid;
+    grid-template-columns: repeat(6, var(--cell-size)); 
+    grid-template-rows: repeat(6, var(--cell-size)); 
+    gap: var(--gap-size); 
+    background-color: #003366;
+    border: 3px solid #0066cc; /* GIỮ LẠI ĐƯỜNG VIỀN CHO LƯỚI */
+    border-radius: 12px; 
+    padding: var(--grid-padding); 
+}
+
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    background-color: #cfe3ff;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: transform 0.2s;
+    user-select: none;
+    border: 1px solid #a0c0ff;
+}
+
+.cell:hover {
+    transform: scale(1.05);
+    border-color: #ffcc00;
+}
+
+.cell.correct {
+    background-image: url("images/treasure.png");
+    background-size: cover;
+    background-position: center;
+    background-color: #fff;
+    border: 3px solid #ffcc00;
+}
+
+.cell.wrong {
+    background-image: url("images/beast.png");
+    background-size: cover;
+    background-position: center;
+    background-color: #ffcccc;
+    border: 3px solid #ff0000;
+}
+
+/* --- Chú giải (Legend) - GIỮ LẠI ĐƯỜNG VIỀN --- */
 #legend {
     margin: 0; 
-    padding: 20px;
+    padding: 15px;
     background-color: rgba(0, 51, 102, 0.5);
-    border-radius: 10px;
-    border: 2px solid #0066cc;
-    width: 300px; 
+    border-radius: 8px;
+    border: 2px solid #0066cc; /* GIỮ LẠI ĐƯỜNG VIỀN */
+    width: 260px; 
     text-align: left;
 }
 
 #legend h2 {
     color: #ffcc00;
     margin-top: 0;
-    font-size: 1.8em;
-    border-bottom: 2px solid #0066cc;
-    padding-bottom: 10px;
+    font-size: 1.2em; 
+    border-bottom: 1px solid #0066cc;
+    padding-bottom: 8px;
 }
 
 .legend-item {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
-    font-size: 1.2em;
+    margin-bottom: 8px;
+    font-size: 0.9em;
 }
 
 .legend-box {
-    width: 30px;
-    height: 30px;
-    margin-right: 15px;
-    border-radius: 5px;
+    width: 28px;
+    height: 28px;
+    margin-right: 12px;
+    border-radius: 4px;
     background-size: cover;
     background-position: center;
+    flex-shrink: 0;
 }
 
 .legend-box.correct {
@@ -99,128 +211,16 @@ h1 {
     border: 2px solid #ff0000;
 }
 
-
-/* --- Các vùng gợi ý --- */
-
-/* Vị trí (1,1): Ô trống giao điểm */
-#clues {
-    grid-row: 1 / 2;
-    grid-column: 1 / 2;
-    background-color: #00305f; 
-    min-height: 120px; 
-}
-
-/* Vị trí (2,1): Gợi ý Hàng */
-#row-clues {
-    grid-row: 2 / 3;
-    grid-column: 1 / 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    border-right: 6px solid #0066cc;
-    background-color: #00305f;
-    padding: var(--grid-padding) 10px;
-}
-
-#row-clues div {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    height: var(--cell-size); 
-    font-weight: bold;
-    color: #ffd700;
-    font-size: 1.6em;
-    padding: 0 10px;
-    margin-bottom: var(--gap-size); 
-}
-#row-clues div:last-child {
-    margin-bottom: 0;
-}
-
-/* Vị trí (1,2): Gợi ý Cột */
-#col-clues {
-    grid-row: 1 / 2;
-    grid-column: 2 / 3;
-    display: grid;
-    grid-template-columns: repeat(6, var(--cell-size)); 
-    gap: var(--gap-size); 
-    align-items: flex-end;
-    border-bottom: 6px solid #0066cc;
-    background-color: #00305f;
-    padding: 10px var(--grid-padding) 10px var(--grid-padding); 
-    border-top: var(--grid-border) solid #00305f; 
-    border-left: var(--grid-border) solid #00305f;
-    border-right: var(--grid-border) solid #00305f;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-}
-
-#col-clues div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    font-weight: bold;
-    color: #ffd700;
-    font-size: 1.6em;
-    line-height: 1.2;
-    min-height: 100px;
-}
-
-/* --- Lưới trò chơi (Grid) --- */
-#grid {
-    grid-row: 2 / 3;
-    grid-column: 2 / 3;
-    display: grid;
-    grid-template-columns: repeat(6, var(--cell-size)); 
-    grid-template-rows: repeat(6, var(--cell-size)); 
-    gap: var(--gap-size); 
-    background-color: #003366;
-    border: var(--grid-border) solid #0066cc; 
-    border-radius: 20px; 
-    padding: var(--grid-padding); 
-}
-
-.cell {
-    width: var(--cell-size);
-    height: var(--cell-size);
-    background-color: #cfe3ff;
-    cursor: pointer;
-    border-radius: 10px;
-    transition: transform 0.2s;
-    user-select: none;
-}
-
-.cell:hover {
-    transform: scale(1.02);
-}
-
-.cell.correct {
-    background-image: url("images/treasure.png");
-    background-size: cover;
-    background-position: center;
-    background-color: #fff;
-    border: 4px solid #ffcc00;
-}
-
-.cell.wrong {
-    background-image: url("images/beast.png");
-    background-size: cover;
-    background-position: center;
-    background-color: #ffcccc;
-    border: 4px solid #ff0000;
-}
-
 /* --- Nút Bắt đầu Game --- */
 #start-btn {
-    margin: 20px auto;
+    margin: 15px auto;
     background-color: #ff9900; 
     border: none;
     color: #001f3f;
-    padding: 15px 30px;
-    border-radius: 10px;
+    padding: 12px 25px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 2em;
+    font-size: 1.6em;
     font-weight: bold;
     transition: background 0.2s;
     display: block; 
@@ -228,9 +228,10 @@ h1 {
 
 #start-btn:hover {
     background-color: #ffb347;
+    transform: translateY(-2px);
 }
 
-/* --- Trạng thái Game (Pause/Start) --- */
+/* --- Trạng thái Game --- */
 .game-paused #main-content-wrapper,
 .game-paused #timer-display {
     opacity: 0.5;
@@ -243,7 +244,7 @@ h1 {
     display: none;
 }
 
-/* --- Popup Trạng thái Game --- */
+/* --- Popup --- */
 .hidden {
     display: none !important;
 }
@@ -264,10 +265,11 @@ h1 {
 #popup-content {
     background: white;
     color: black;
-    padding: 60px;
-    border-radius: 20px;
+    padding: 45px;
+    border-radius: 15px;
     text-align: center;
     animation: pop 0.5s ease;
+    max-width: 90%;
 }
 
 @keyframes pop {
@@ -276,21 +278,56 @@ h1 {
 }
 
 #popup-message {
-    font-size: 3em;
+    font-size: 2.2em;
 }
 
 #restart-btn {
-    margin-top: 30px;
+    margin-top: 25px;
     background-color: #0074e8;
     border: none;
     color: white;
-    padding: 20px 40px;
-    border-radius: 16px;
+    padding: 15px 30px;
+    border-radius: 10px;
     cursor: pointer;
-    font-size: 2em;
+    font-size: 1.6em;
     transition: background 0.2s;
 }
 
 #restart-btn:hover {
     background-color: #005ec1;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    #main-content-wrapper {
+        gap: 20px;
+    }
+    #legend {
+        width: 240px; 
+    }
+}
+
+@media (max-width: 768px) {
+    #main-content-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    #legend {
+        width: 85%;
+    }
+    body {
+        padding: 5px 10px 10px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --cell-size: 45px;
+        --grid-padding: 8px;
+    }
+    #legend {
+        width: 90%;
+    }
 }
