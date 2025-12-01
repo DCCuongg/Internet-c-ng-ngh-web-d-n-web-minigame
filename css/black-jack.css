@@ -6,10 +6,6 @@
 }
 
 .black-jack {
-  /* position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw; */
   min-height: 90vh;
 
   background-image: url('/images/black-jack-bg.jpg');
