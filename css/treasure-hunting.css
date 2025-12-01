@@ -1,136 +1,126 @@
+/* =======================
+   GIAO DIỆN CŨ (50px) GHÉP VÀO GIAO DIỆN MỚI
+   ======================= */
+
 .treasure-hunting {
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(135deg, #001f3f, #004080);
   color: white;
   text-align: center;
   margin: 0;
-  padding: 40px;
+  padding: 10px 20px 20px 20px;
+  width: 100%;
+  min-height: 100vh;
+  --cell-size: 50px;
+  --gap-size: 4px;
+  --grid-padding: 10px;
 }
 
-.treasure-hunting h1 {
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
-  color: #ffcc00;
-  font-size: 3em;
-}
-
-/* Biến CSS */
-.treasure-hunting {
-  --cell-size: 100px;
-  --gap-size: 6px;
-  --grid-border: 8px;
-  --grid-padding: 16px;
-}
-
-/* --- Container chính: Đặt bảng và chú giải ngang nhau --- */
+/* wrapper */
 .treasure-hunting #main-content-wrapper {
   display: flex;
-  justify-content: center;
   align-items: flex-start;
-  gap: 40px;
-  margin-top: 20px;
-}
-
-/* --- Timer --- */
-.treasure-hunting #timer-display {
-  font-size: 2.5em;
-  font-weight: bold;
-  color: #ffd700;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  margin: 0 auto 20px auto;
-  padding: 10px 20px;
-  background-color: rgba(0, 51, 102, 0.7);
-  border-radius: 10px;
-  display: block;
+  gap: 25px;
+  margin: 0 auto;
   width: fit-content;
-  border: 3px solid #0066cc;
 }
 
-/* --- Bảng Game (Game Container) --- */
+/* =======================
+   TIMER
+   ======================= */
+.treasure-hunting #timer-display {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #ffcc00;
+  background-color: rgba(0, 51, 102, 0.5);
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  border: 1px solid #0066cc;
+}
+
+/* =======================
+   BỐ CỤC CHÍNH
+   ======================= */
 .treasure-hunting #treasure-hunting-game-container {
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "clues col-clues"
+    "row-clues grid";
+  background: transparent;
+  padding: 0;
+  border: none;
 }
 
-/* --- Chú giải (Legend) --- */
+/* =======================
+   LEGEND — GIỮ NGUYÊN KHUNG
+   ======================= */
 .treasure-hunting #legend {
   margin: 0;
-  padding: 20px;
-  background-color: rgba(0, 51, 102, 0.5);
-  border-radius: 10px;
-  border: 2px solid #0066cc;
-  width: 300px;
+  padding: 12px;
+  background-color: rgba(0, 51, 102, 0.45);
+  border-radius: 6px;
+  border: 1px solid #0066cc;
+  width: 220px;
   text-align: left;
 }
 
 .treasure-hunting #legend h2 {
   color: #ffcc00;
-  margin-top: 0;
-  font-size: 1.8em;
-  border-bottom: 2px solid #0066cc;
-  padding-bottom: 10px;
+  font-size: 1.1em;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #0066cc;
 }
 
 .treasure-hunting .legend-item {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
-  font-size: 1.2em;
+  margin-bottom: 7px;
+  font-size: 0.85em;
 }
 
 .treasure-hunting .legend-box {
-  width: 30px;
-  height: 30px;
-  margin-right: 15px;
-  border-radius: 5px;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  border-radius: 4px;
   background-size: cover;
-  background-position: center;
+  flex-shrink: 0;
 }
 
-.treasure-hunting .legend-box.correct {
-  background-image: url("/images/treasure-hunting/treasure.png");
-  background-color: #fff;
-  border: 2px solid #ffcc00;
-}
+/* =======================
+   CLUES — GIỐNG BẢN CŨ
+   ======================= */
 
-.treasure-hunting .legend-box.wrong {
-  background-image: url("/images/treasure-hunting/beast.png");
-  background-color: #ffcccc;
-  border: 2px solid #ff0000;
-}
-
-
-/* --- Các vùng gợi ý --- */
-
-/* Vị trí (1,1): Ô trống giao điểm */
 .treasure-hunting #clues {
-  grid-row: 1 / 2;
-  grid-column: 1 / 2;
-  background-color: #00305f;
-  min-height: 120px;
+  grid-area: clues;
+  min-width: 60px;
+  min-height: 60px;
 }
 
-/* Vị trí (2,1): Gợi ý Hàng */
+/* Row clues */
 .treasure-hunting #row-clues {
-  grid-row: 2 / 3;
-  grid-column: 1 / 2;
+  grid-area: row-clues;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  border-right: 6px solid #0066cc;
-  background-color: #00305f;
-  padding: var(--grid-padding) 10px;
+  /* Đảm bảo căn chỉnh lên trên, không dùng center */
+  justify-content: flex-start; 
+  /* Loại bỏ padding-right không cần thiết */
+  padding: var(--grid-padding) 6px 0 0 !important; 
+  margin-right: 0 !important;
 }
 
 .treasure-hunting #row-clues div {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
   height: var(--cell-size);
+  display: flex;
+  justify-content: flex-end !important;
+  padding-right: 4px;
+  align-items: center;
+  font-size: 0.8em;
   font-weight: bold;
-  color: #ffd700;
-  font-size: 1.6em;
-  padding: 0 10px;
+  color: #ffdd66;
   margin-bottom: var(--gap-size);
 }
 
@@ -138,93 +128,90 @@
   margin-bottom: 0;
 }
 
-/* Vị trí (1,2): Gợi ý Cột */
+/* Column clues */
 .treasure-hunting #col-clues {
-  grid-row: 1 / 2;
-  grid-column: 2 / 3;
+  grid-area: col-clues;
   display: grid;
   grid-template-columns: repeat(6, var(--cell-size));
   gap: var(--gap-size);
-  align-items: flex-end;
-  border-bottom: 6px solid #0066cc;
-  background-color: #00305f;
-  padding: 10px var(--grid-padding) 10px var(--grid-padding);
-  border-top: var(--grid-border) solid #00305f;
-  border-left: var(--grid-border) solid #00305f;
-  border-right: var(--grid-border) solid #00305f;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  padding-bottom: 6px;
+  padding-top: var(--grid-padding);
+  justify-content: center; /* căn giữa so với grid */
 }
+
 
 .treasure-hunting #col-clues div {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: flex-end;
+  align-items: center;
+  min-height: var(--cell-size);
+  font-size: 0.8em;
   font-weight: bold;
-  color: #ffd700;
-  font-size: 1.6em;
-  line-height: 1.2;
-  min-height: 100px;
+  color: #ffdd66;
 }
 
-/* --- Lưới trò chơi (Grid) --- */
+/* =======================
+   GRID — STYLE BẢN CŨ
+   ======================= */
+
 .treasure-hunting #grid {
-  grid-row: 2 / 3;
-  grid-column: 2 / 3;
+  grid-area: grid;
   display: grid;
   grid-template-columns: repeat(6, var(--cell-size));
   grid-template-rows: repeat(6, var(--cell-size));
   gap: var(--gap-size);
-  background-color: #003366;
-  border: var(--grid-border) solid #0066cc;
-  border-radius: 20px;
+  background-color: rgba(0, 51, 102, 0.3);
   padding: var(--grid-padding);
+  border-radius: 8px;
+
+  /* Bỏ border dày của bản mới */
+  border: none;
 }
 
 .treasure-hunting .cell {
   width: var(--cell-size);
   height: var(--cell-size);
-  background-color: #cfe3ff;
+  background-color: #dce8ff;
+  border-radius: 4px;
   cursor: pointer;
-  border-radius: 10px;
-  transition: transform 0.2s;
   user-select: none;
+  transition: transform 0.15s;
+
+  /* Cell bản cũ có border mỏng */
+  border: 1px solid #9dbdff;
 }
 
 .treasure-hunting .cell:hover {
-  transform: scale(1.02);
+  transform: scale(1.05);
+  border-color: #ffcc00;
 }
 
 .treasure-hunting .cell.correct {
   background-image: url("/images/treasure-hunting/treasure.png");
   background-size: cover;
-  background-position: center;
-  background-color: #fff;
-  border: 4px solid #ffcc00;
+  border: 2px solid #ffcc00;
 }
 
 .treasure-hunting .cell.wrong {
   background-image: url("/images/treasure-hunting/beast.png");
   background-size: cover;
-  background-position: center;
-  background-color: #ffcccc;
-  border: 4px solid #ff0000;
+  border: 2px solid #ff0000;
 }
 
-/* --- Nút Bắt đầu Game --- */
+/* =======================
+   BUTTON — LÀM NHỎ NHẸ GIỐNG BẢN CŨ
+   ======================= */
 .treasure-hunting #start-btn {
-  margin: 20px auto;
+  margin: 15px auto;
   background-color: #ff9900;
-  border: none;
   color: #001f3f;
-  padding: 15px 30px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 2em;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  font-size: 1.3em;
   font-weight: bold;
-  transition: background 0.2s;
-  display: block;
+  cursor: pointer;
 }
 
 .treasure-hunting #start-btn:hover {
@@ -246,47 +233,39 @@
   display: none;
 }
 
-/* --- Popup Trạng thái Game --- */
-.treasure-hunting .hidden {
-  display: none !important;
-}
+/* Popup giữ nguyên */
+.treasure-hunting .hidden { display: none !important; }
 
 .treasure-hunting #popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
 }
 
 .treasure-hunting #popup-content {
-  background: white;
-  color: black;
-  padding: 60px;
-  border-radius: 20px;
-  text-align: center;
-  animation: pop 0.5s ease;
+    background: white;
+    color: black;
+    padding: 45px;
+    border-radius: 15px;
+    text-align: center;
+    animation: pop 0.5s ease;
+    max-width: 90%;
 }
 
 @keyframes pop {
-  from {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }
 
 .treasure-hunting #popup-message {
-  font-size: 3em;
+    font-size: 2.2em;
 }
 
 .treasure-hunting #restart-btn {
@@ -303,4 +282,21 @@
 
 .treasure-hunting #restart-btn:hover {
   background-color: #005ec1;
+}
+
+/* =======================
+   RESPONSIVE — DÙNG KÍCH THƯỚC TỪ BẢN CŨ
+   ======================= */
+@media (max-width: 768px) {
+  .treasure-hunting #main-content-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .treasure-hunting #legend {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .treasure-hunting { --cell-size: 42px; }
 }

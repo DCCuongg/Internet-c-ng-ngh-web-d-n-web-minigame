@@ -1,5 +1,6 @@
 # Mini Game Web – Đồ án môn Công Nghệ Web
-
+https://darling-melba-fc9879.netlify.app/
+https://internet-c-ng-ngh-web-d-n-web-minigame.pages.dev/
 ## Giới thiệu
 Đây là đồ án môn Công Nghệ Web xây dựng trang web Mini Game cho phép người dùng:
 - Chơi các trò chơi đơn giản (Tic Tac Toe, Puzzle, Reaction Game, ...)

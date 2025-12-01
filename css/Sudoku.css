@@ -58,6 +58,25 @@
     background: #5a7bc0;
 }
 
+/* Số liệu thống kê (Số lỗi và Thời gian) */
+.Sudoku .sudoku-stats {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    margin: 10px auto;
+    font-size: 20px;
+}
+
+#sudoku-mistake-counter {
+    color: #ff3333;
+    font-weight: bold;
+}
+
+#sudoku-timer {
+    color: #00f;
+    font-weight: bold;
+}
+
 /* Định dạng bảng sudoku*/
 #sudoku-board {
     display: flex;
@@ -172,4 +191,12 @@
     font-size: 20px;
     padding: 15px;
     margin-top: 20px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.Sudoku footer ul {
+    margin: 0;
+    line-height: 1.5;
+    padding-left: 40px;
 }
