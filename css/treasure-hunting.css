@@ -1,5 +1,5 @@
 /* =======================
-   GIAO DIỆN CŨ (50px) GHÉP VÀO GIAO DIỆN MỚI
+   GIAO DIỆN (50px)
    ======================= */
 
 .treasure-hunting {
@@ -54,9 +54,7 @@
   border: none;
 }
 
-/* =======================
-   LEGEND — GIỮ NGUYÊN KHUNG
-   ======================= */
+/* ===========- LEGEND ============= */
 .treasure-hunting #legend {
   margin: 0;
   padding: 12px;
@@ -90,9 +88,22 @@
   flex-shrink: 0;
 }
 
-/* =======================
-   CLUES — GIỐNG BẢN CŨ
-   ======================= */
+/* Legend ô đúng */
+.legend-box.correct {
+  background-image: url("/images/treasure-hunting/treasure.png");
+  background-size: cover;
+  border: 2px solid #ffcc00;
+}
+
+/* Legend ô sai */
+.legend-box.wrong {
+  background-image: url("/images/treasure-hunting/beast.png");
+  background-size: cover;
+  border: 2px solid #ff0000;
+}
+
+
+/* ======== CLUES =========== */
 
 .treasure-hunting #clues {
   grid-area: clues;
@@ -105,9 +116,7 @@
   grid-area: row-clues;
   display: flex;
   flex-direction: column;
-  /* Đảm bảo căn chỉnh lên trên, không dùng center */
   justify-content: flex-start; 
-  /* Loại bỏ padding-right không cần thiết */
   padding: var(--grid-padding) 6px 0 0 !important; 
   margin-right: 0 !important;
 }
@@ -151,9 +160,7 @@
   color: #ffdd66;
 }
 
-/* =======================
-   GRID — STYLE BẢN CŨ
-   ======================= */
+/* ========= GRID ========= */
 
 .treasure-hunting #grid {
   grid-area: grid;
@@ -164,8 +171,6 @@
   background-color: rgba(0, 51, 102, 0.3);
   padding: var(--grid-padding);
   border-radius: 8px;
-
-  /* Bỏ border dày của bản mới */
   border: none;
 }
 
@@ -177,8 +182,6 @@
   cursor: pointer;
   user-select: none;
   transition: transform 0.15s;
-
-  /* Cell bản cũ có border mỏng */
   border: 1px solid #9dbdff;
 }
 
@@ -199,9 +202,7 @@
   border: 2px solid #ff0000;
 }
 
-/* =======================
-   BUTTON — LÀM NHỎ NHẸ GIỐNG BẢN CŨ
-   ======================= */
+/*  BUTTON  */
 .treasure-hunting #start-btn {
   margin: 15px auto;
   background-color: #ff9900;
@@ -233,7 +234,7 @@
   display: none;
 }
 
-/* Popup giữ nguyên */
+/* Popup */
 .treasure-hunting .hidden { display: none !important; }
 
 .treasure-hunting #popup {
