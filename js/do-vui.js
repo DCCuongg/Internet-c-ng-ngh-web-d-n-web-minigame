@@ -120,6 +120,8 @@ export async function initGame(container) {
     document.body.appendChild(style);
     container.innerHTML = `
         <div class="do-vui">
+                <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox">
+                <label for="nav-toggle" class="nav-toggle-label"></label>
             <nav>
                 <h2>Danh sách câu</h2>
                 <ul>
