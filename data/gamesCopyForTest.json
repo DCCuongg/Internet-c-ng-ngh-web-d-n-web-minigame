@@ -1,171 +1,22 @@
 [
   {
-    "id": "treasure-hunting",
-    "name": "Treasure Hunting",
-    "image": "/images/treasure-hunting/treasure-hunting.png",
-    "module": "/js/treasure-hunting.js",
+    "id": "tic-tac-toe",
+    "name": "Tic Tac Toe",
+    "image": "/images/tic-tac-toe.png",
+    "module": "/js/tic-tac-toe.js",
     "category": [
+      "strategy",
       "puzzle",
-      "adventure",
-      "strategy"
-    ],
-    "achievements": {
-      "newbie": {
-        "title": "Kho báu đầu tiên",
-        "description": "Tìm thấy kho báu đầu tiên! Một khởi đầu tuyệt vời cho hành trình khám phá của bạn."
-      },
-      "master-treasure": {
-        "title": "Thợ săn kho báu",
-        "description": "Hoàn thành tất cả các bản đồ kho báu và trở thành bậc thầy trong việc tìm kiếm kho báu!"
-      },
-      "speed-run": {
-        "title": "Nhanh như chớp",
-        "description": "Hoàn thành một bản đồ kho báu trong thời gian cực ngắn. Tốc độ và sự khéo léo là chìa khóa!"
-      }
-    }
-  },
-  {
-    "id": "do-vui",
-    "name": "Đố Vui",
-    "image": "/images/do_vui/logo.png",
-    "module": "/js/do-vui.js",
-    "category": [
-      "strategy",
-      "puzzle"
-    ],
-    "achievements": {
-      "newbie": {
-        "title": "Người mới",
-        "description": "Hoàn thành câu hỏi đầu tiên trong Đố Vui! Đây là bước khởi đầu cho hành trình trí tuệ của bạn."
-      },
-      "genius": {
-        "title": "Thiên tài",
-        "description": "Trả lời đúng tất cả câu hỏi và chứng tỏ trí thông minh vượt trội! Không còn câu hỏi nào có thể làm khó bạn."
-      }
-    }
-  },
-  {
-    "id": "black-jack",
-    "name": "Black Jack",
-    "image": "/images/black-jack.jpg",
-    "module": "/js/black-jack.js",
-    "category": [
-      "strategy",
-      "puzzle"
+      "multiplayer"
     ],
     "achievements": {
       "newbie": {
         "title": "Newbie",
-        "description": "Hoàn thành ván Black Jack đầu tiên của bạn! Dù thắng hay thua, bạn đã chính thức đặt chân vào thế giới của những con bài."
+        "description": "Hoàn thành trận đầu tiên trong Tic Tac Toe! Dù thắng hay thua, đây là bước khởi đầu cho hành trình chiến thuật của bạn."
       },
       "master": {
         "title": "Phá đảo",
-        "description": "Đánh bại mọi đối thủ và làm chủ bàn cược! Bạn đã trở thành huyền thoại của Black Jack, nơi may mắn và chiến thuật hòa làm một."
-      }
-    }
-  },
-  {
-    "id": "basic-sudoku",
-    "name": "Basic Sudoku",
-    "image": "/images/Sudoku_img/unnamed.jpg",
-    "module": "/js/Sudoku.js",
-    "category": [
-      "strategy",
-      "puzzle"
-    ],
-    "achievements": {
-      "newbie": {
-        "title": "Newbie",
-        "description": "Giải xong bảng Sudoku đầu tiên! Một khởi đầu tuyệt vời cho hành trình chinh phục những ô số đầy thử thách."
-      },
-      "master": {
-        "title": "Phá đảo",
-        "description": "Hoàn thành tất cả các cấp độ Sudoku! Bạn đã trở thành bậc thầy của những con số và logic đỉnh cao."
-      }
-    }
-  },
-  {
-    "id": "treasure-hunting",
-    "name": "Treasure Hunting",
-    "image": "/images/treasure-hunting/treasure-hunting.png",
-    "module": "/js/treasure-hunting.js",
-    "category": [
-      "puzzle",
-      "adventure",
-      "strategy"
-    ],
-    "achievements": {
-      "newbie": {
-        "title": "Kho báu đầu tiên",
-        "description": "Tìm thấy kho báu đầu tiên! Một khởi đầu tuyệt vời cho hành trình khám phá của bạn."
-      },
-      "master-treasure": {
-        "title": "Thợ săn kho báu",
-        "description": "Hoàn thành tất cả các bản đồ kho báu và trở thành bậc thầy trong việc tìm kiếm kho báu!"
-      },
-      "speed-run": {
-        "title": "Nhanh như chớp",
-        "description": "Hoàn thành một bản đồ kho báu trong thời gian cực ngắn. Tốc độ và sự khéo léo là chìa khóa!"
-      }
-    }
-  },
-  {
-    "id": "do-vui",
-    "name": "Đố Vui",
-    "image": "/images/do_vui/logo.png",
-    "module": "/js/do-vui.js",
-    "category": [
-      "strategy",
-      "puzzle"
-    ],
-    "achievements": {
-      "newbie": {
-        "title": "Người mới",
-        "description": "Hoàn thành câu hỏi đầu tiên trong Đố Vui! Đây là bước khởi đầu cho hành trình trí tuệ của bạn."
-      },
-      "genius": {
-        "title": "Thiên tài",
-        "description": "Trả lời đúng tất cả câu hỏi và chứng tỏ trí thông minh vượt trội! Không còn câu hỏi nào có thể làm khó bạn."
-      }
-    }
-  },
-  {
-    "id": "black-jack",
-    "name": "Black Jack",
-    "image": "/images/black-jack.jpg",
-    "module": "/js/black-jack.js",
-    "category": [
-      "strategy",
-      "puzzle"
-    ],
-    "achievements": {
-      "newbie": {
-        "title": "Newbie",
-        "description": "Hoàn thành ván Black Jack đầu tiên của bạn! Dù thắng hay thua, bạn đã chính thức đặt chân vào thế giới của những con bài."
-      },
-      "master": {
-        "title": "Phá đảo",
-        "description": "Đánh bại mọi đối thủ và làm chủ bàn cược! Bạn đã trở thành huyền thoại của Black Jack, nơi may mắn và chiến thuật hòa làm một."
-      }
-    }
-  },
-  {
-    "id": "basic-sudoku",
-    "name": "Basic Sudoku",
-    "image": "/images/Sudoku_img/unnamed.jpg",
-    "module": "/js/Sudoku.js",
-    "category": [
-      "strategy",
-      "puzzle"
-    ],
-    "achievements": {
-      "newbie": {
-        "title": "Newbie",
-        "description": "Giải xong bảng Sudoku đầu tiên! Một khởi đầu tuyệt vời cho hành trình chinh phục những ô số đầy thử thách."
-      },
-      "master": {
-        "title": "Phá đảo",
-        "description": "Hoàn thành tất cả các cấp độ Sudoku! Bạn đã trở thành bậc thầy của những con số và logic đỉnh cao."
+        "description": "Đánh bại mọi đối thủ và chinh phục toàn bộ chế độ chơi! Không còn ai đủ sức cản bước bạn trên bàn cờ 3x3."
       }
     }
   },
@@ -255,47 +106,73 @@
     }
   },
   {
-    "id": "treasure-hunting",
-    "name": "Treasure Hunting",
-    "image": "/images/treasure-hunting/treasure-hunting.png",
-    "module": "/js/treasure-hunting.js",
+    "id": "memory-game",
+    "name": "Memory Game",
+    "image": "/images/memory.png",
+    "module": "/js/memory-game.js",
     "category": [
       "puzzle",
-      "adventure",
-      "strategy"
+      "arcade"
     ],
     "achievements": {
       "newbie": {
-        "title": "Kho báu đầu tiên",
-        "description": "Tìm thấy kho báu đầu tiên! Một khởi đầu tuyệt vời cho hành trình khám phá của bạn."
+        "title": "Newbie",
+        "description": "Hoàn thành vòng chơi Memory Game đầu tiên! Một bước khởi đầu cho trí nhớ siêu phàm của bạn."
       },
-      "master-treasure": {
-        "title": "Thợ săn kho báu",
-        "description": "Hoàn thành tất cả các bản đồ kho báu và trở thành bậc thầy trong việc tìm kiếm kho báu!"
-      },
-      "speed-run": {
-        "title": "Nhanh như chớp",
-        "description": "Hoàn thành một bản đồ kho báu trong thời gian cực ngắn. Tốc độ và sự khéo léo là chìa khóa!"
+      "master": {
+        "title": "Phá đảo",
+        "description": "Hoàn tất tất cả các vòng chơi Memory Game! Bạn đã chứng minh khả năng ghi nhớ và tập trung tuyệt đối."
       }
     }
   },
   {
-    "id": "do-vui",
-    "name": "Đố Vui",
-    "image": "/images/do_vui/logo.png",
-    "module": "/js/do-vui.js",
+    "id": "snake-game",
+    "name": "Snake Game",
+    "image": "/images/snake.png",
+    "module": "/js/snake-game.js",
     "category": [
-      "strategy",
-      "puzzle"
+      "arcade",
+      "action"
+    ]
+  },
+  {
+    "id": "snake-game",
+    "name": "Snake Game",
+    "image": "/images/snake.png",
+    "module": "/js/snake-game.js",
+    "category": [
+      "arcade",
+      "action"
     ],
     "achievements": {
       "newbie": {
-        "title": "Người mới",
-        "description": "Hoàn thành câu hỏi đầu tiên trong Đố Vui! Đây là bước khởi đầu cho hành trình trí tuệ của bạn."
+        "title": "Newbie",
+        "description": "Hoàn thành lần chơi Snake Game đầu tiên! Một khởi đầu tuyệt vời cho hành trình nuôi rắn của bạn."
       },
-      "genius": {
-        "title": "Thiên tài",
-        "description": "Trả lời đúng tất cả câu hỏi và chứng tỏ trí thông minh vượt trội! Không còn câu hỏi nào có thể làm khó bạn."
+      "master": {
+        "title": "Phá đảo",
+        "description": "Đạt điểm cao tối đa và chinh phục mọi thử thách! Bạn đã trở thành bậc thầy Snake Game."
+      }
+    }
+  },
+  {
+    "id": "tic-tac-toe",
+    "name": "Tic Tac Toe",
+    "image": "/images/tic-tac-toe.png",
+    "module": "/js/tic-tac-toe.js",
+    "category": [
+      "strategy",
+      "puzzle",
+      "multiplayer"
+    ],
+    "achievements": {
+      "newbie": {
+        "title": "Newbie",
+        "description": "Hoàn thành trận đầu tiên trong Tic Tac Toe! Dù thắng hay thua, đây là bước khởi đầu cho hành trình chiến thuật của bạn."
+      },
+      "master": {
+        "title": "Phá đảo",
+        "description": "Đánh bại mọi đối thủ và chinh phục toàn bộ chế độ chơi! Không còn ai đủ sức cản bước bạn trên bàn cờ 3x3."
       }
     }
   },
@@ -336,6 +213,167 @@
       "master": {
         "title": "Phá đảo",
         "description": "Hoàn thành tất cả các cấp độ Sudoku! Bạn đã trở thành bậc thầy của những con số và logic đỉnh cao."
+      }
+    }
+  },
+  {
+    "id": "memory-game",
+    "name": "Memory Game",
+    "image": "/images/memory.png",
+    "module": "/js/memory-game.js",
+    "category": [
+      "puzzle",
+      "arcade"
+    ],
+    "achievements": {
+      "newbie": {
+        "title": "Newbie",
+        "description": "Hoàn thành vòng chơi Memory Game đầu tiên! Một bước khởi đầu cho trí nhớ siêu phàm của bạn."
+      },
+      "master": {
+        "title": "Phá đảo",
+        "description": "Hoàn tất tất cả các vòng chơi Memory Game! Bạn đã chứng minh khả năng ghi nhớ và tập trung tuyệt đối."
+      }
+    }
+  },
+  {
+    "id": "snake-game",
+    "name": "Snake Game",
+    "image": "/images/snake.png",
+    "module": "/js/snake-game.js",
+    "category": [
+      "arcade",
+      "action"
+    ]
+  },
+  {
+    "id": "snake-game",
+    "name": "Snake Game",
+    "image": "/images/snake.png",
+    "module": "/js/snake-game.js",
+    "category": [
+      "arcade",
+      "action"
+    ],
+    "achievements": {
+      "newbie": {
+        "title": "Newbie",
+        "description": "Hoàn thành lần chơi Snake Game đầu tiên! Một khởi đầu tuyệt vời cho hành trình nuôi rắn của bạn."
+      },
+      "master": {
+        "title": "Phá đảo",
+        "description": "Đạt điểm cao tối đa và chinh phục mọi thử thách! Bạn đã trở thành bậc thầy Snake Game."
+      }
+    }
+  },
+  {
+    "id": "tic-tac-toe",
+    "name": "Tic Tac Toe",
+    "image": "/images/tic-tac-toe.png",
+    "module": "/js/tic-tac-toe.js",
+    "category": [
+      "strategy",
+      "puzzle",
+      "multiplayer"
+    ],
+    "achievements": {
+      "newbie": {
+        "title": "Newbie",
+        "description": "Hoàn thành trận đầu tiên trong Tic Tac Toe! Dù thắng hay thua, đây là bước khởi đầu cho hành trình chiến thuật của bạn."
+      },
+      "master": {
+        "title": "Phá đảo",
+        "description": "Đánh bại mọi đối thủ và chinh phục toàn bộ chế độ chơi! Không còn ai đủ sức cản bước bạn trên bàn cờ 3x3."
+      }
+    }
+  },
+  {
+    "id": "black-jack",
+    "name": "Black Jack",
+    "image": "/images/black-jack.jpg",
+    "module": "/js/black-jack.js",
+    "category": [
+      "strategy",
+      "puzzle"
+    ],
+    "achievements": {
+      "newbie": {
+        "title": "Newbie",
+        "description": "Hoàn thành ván Black Jack đầu tiên của bạn! Dù thắng hay thua, bạn đã chính thức đặt chân vào thế giới của những con bài."
+      },
+      "master": {
+        "title": "Phá đảo",
+        "description": "Đánh bại mọi đối thủ và làm chủ bàn cược! Bạn đã trở thành huyền thoại của Black Jack, nơi may mắn và chiến thuật hòa làm một."
+      }
+    }
+  },
+  {
+    "id": "basic-sudoku",
+    "name": "Basic Sudoku",
+    "image": "/images/Sudoku_img/unnamed.jpg",
+    "module": "/js/Sudoku.js",
+    "category": [
+      "strategy",
+      "puzzle"
+    ],
+    "achievements": {
+      "newbie": {
+        "title": "Newbie",
+        "description": "Giải xong bảng Sudoku đầu tiên! Một khởi đầu tuyệt vời cho hành trình chinh phục những ô số đầy thử thách."
+      },
+      "master": {
+        "title": "Phá đảo",
+        "description": "Hoàn thành tất cả các cấp độ Sudoku! Bạn đã trở thành bậc thầy của những con số và logic đỉnh cao."
+      }
+    }
+  },
+  {
+    "id": "memory-game",
+    "name": "Memory Game",
+    "image": "/images/memory.png",
+    "module": "/js/memory-game.js",
+    "category": [
+      "puzzle",
+      "arcade"
+    ],
+    "achievements": {
+      "newbie": {
+        "title": "Newbie",
+        "description": "Hoàn thành vòng chơi Memory Game đầu tiên! Một bước khởi đầu cho trí nhớ siêu phàm của bạn."
+      },
+      "master": {
+        "title": "Phá đảo",
+        "description": "Hoàn tất tất cả các vòng chơi Memory Game! Bạn đã chứng minh khả năng ghi nhớ và tập trung tuyệt đối."
+      }
+    }
+  },
+  {
+    "id": "snake-game",
+    "name": "Snake Game",
+    "image": "/images/snake.png",
+    "module": "/js/snake-game.js",
+    "category": [
+      "arcade",
+      "action"
+    ]
+  },
+  {
+    "id": "snake-game",
+    "name": "Snake Game",
+    "image": "/images/snake.png",
+    "module": "/js/snake-game.js",
+    "category": [
+      "arcade",
+      "action"
+    ],
+    "achievements": {
+      "newbie": {
+        "title": "Newbie",
+        "description": "Hoàn thành lần chơi Snake Game đầu tiên! Một khởi đầu tuyệt vời cho hành trình nuôi rắn của bạn."
+      },
+      "master": {
+        "title": "Phá đảo",
+        "description": "Đạt điểm cao tối đa và chinh phục mọi thử thách! Bạn đã trở thành bậc thầy Snake Game."
       }
     }
   }
